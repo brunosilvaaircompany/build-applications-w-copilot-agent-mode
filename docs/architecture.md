@@ -45,13 +45,13 @@ flowchart LR
 
 Registre seu plano aqui antes de editar o código.
 
-- Decisão da camada de apresentação:
-- Decisão da camada de lógica:
-- Decisão da camada de dados:
-- Abordagem para registro de atividades:
-- Abordagem para gerenciamento de equipes:
-- Abordagem para o placar:
-- Abordagem para sugestões de treino:
+- Decisão da camada de apresentação: React Router mantém uma tela por capacidade; cada tela carrega dados com o cliente compartilhado `getJson` e anuncia estados acessíveis em português do Brasil.
+- Decisão da camada de lógica: Express expõe as rotas sob `/api/`, valida entradas antes de persistir e mantém o cálculo de regras de negócio nos serviços.
+- Decisão da camada de dados: Mongoose expressa campos obrigatórios e relacionamentos; o seed usa chaves estáveis e upserts sem apagar registros não relacionados.
+- Abordagem para registro de atividades: validar IDs e campos, confirmar a existência da pessoa e da equipe e calcular pontos a partir dos minutos informados.
+- Abordagem para gerenciamento de equipes: validar nome e mascote, manter integrantes como referências a pessoas existentes e retornar a equipe criada e listada.
+- Abordagem para o placar: somar pontos de atividades por equipe, ordenar por pontuação decrescente e atribuir posições iniciadas em 1.
+- Abordagem para sugestões de treino: localizar a pessoa pelo e-mail, priorizar o foco da atividade recente e usar a meta como alternativa, explicando a recomendação em português.
 
 ## Plano de testes
 
